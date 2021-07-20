@@ -1,17 +1,59 @@
 package com.alfabank.work11;
 
+import java.util.Scanner;
+
 public class Runner {
     public void run(){
-        outInfo(addInterestToBook(createMassive(),10));
+        Scanner author = new Scanner(System.in);
+        Scanner publish = new Scanner(System.in);
+        Scanner year = new Scanner(System.in);
+
+        System.out.println("Введите имя автора: ");
+        findAuthor(createMassive(),author.nextLine());
+        System.out.println("Введите издательство: ");
+        findPublish(createMassive(),publish.nextLine());
+        System.out.println("Введите год: ");
+        findYear(createMassive(),year.nextInt());
     }
 
-    public Book[] addInterestToBook(Book[] array, double interest){
+    private void findAuthor(Book[] array,String name){
+        int count = 0;
+        for (Book b : array) {
+            if(b.getAuthor().equals(name)){
+                b.view();
+                count++;
+            }
+        }
+        if(count == 0) System.out.println("Автора с этим именем не найдено");
+    }
+    private void findPublish(Book[] array,String name){
+        int count = 0;
+        for (Book b : array) {
+            if(b.getPublish().equals(name)){
+                b.view();
+                count++;
+            }
+        }
+        if(count == 0) System.out.println("Издевательство не найдено");
+    }
+    private void findYear(Book[] array,int year){
+        int count = 0;
+        for (Book b : array) {
+            if(b.getYear() > year){
+                b.view();
+                count++;
+            }
+        }
+        if(count == 0) System.out.println("Нет выпуска после указанного года");
+    }
+
+
+    private Book[] addInterestToBook(Book[] array, double interest){
         for (Book b : array) {
             b.setCost((b.getCost() * interest / 100) + b.getCost());
         }
         return array;
     }
-
     private Book[] createMassive(){
         return new Book[]{
                 new Book(1, "Parail", "Privetos", "Kiev", 1, 356, 150.50),
@@ -28,4 +70,5 @@ public class Runner {
             b.view();
         }
     }
+
 }
