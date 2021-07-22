@@ -10,7 +10,7 @@ public class Book {
     private double cost;
 
 
-    public Book(){
+    public Book() {
         id = 0;
         author = "";
         title = "";
@@ -33,53 +33,62 @@ public class Book {
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
+
     public String getAuthor() {
         return author;
     }
+
     public void setAuthor(String author) {
         this.author = author;
     }
+
     public String getTitle() {
         return title;
     }
+
     public void setTitle(String title) {
         this.title = title;
     }
+
     public String getPublish() {
         return publish;
     }
+
     public void setPublish(String publish) {
         this.publish = publish;
     }
+
     public int getYear() {
         return year;
     }
+
     public void setYear(int year) {
         this.year = year;
     }
+
     public int getPage() {
         return page;
     }
+
     public void setPage(int page) {
         this.page = page;
     }
+
     public double getCost() {
         return cost;
     }
+
     public void setCost(double cost) {
         this.cost = cost;
     }
 
     public void view() {
-        System.out.println(getId() + " "
-                + getPage() + " "
-                + getYear() + " "
-                + getTitle() + " "
-                + getCost() + " "
-                + getAuthor() + " "
-                + getPublish());
+        System.out.printf(" " + this.id + " " + this.author+ " " + this.title + " " + this.publish + " " +
+                this.year + " " + this.page + " " + this.cost + "\n", "%d%s%n%s%n%s%n%d%d%f");
+
     }
 }
