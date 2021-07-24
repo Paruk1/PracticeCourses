@@ -1,4 +1,4 @@
-package work12;
+package com.alfabank.work12;
 
 public class MyCalculate {
     private static double Pi;

@@ -1,6 +1,4 @@
-package work12;
-
-import java.util.Scanner;
+package com.alfabank.work12;
 
 public class Runner {
 
