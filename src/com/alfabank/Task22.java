@@ -1,6 +1,6 @@
 package com.alfabank;
 
-import com.alfabank.work122.Runner;
+import com.alfabank.work12.Runner;
 
 public class Task22 {
     public static void main(String[] args) {
