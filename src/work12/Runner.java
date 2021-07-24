@@ -4,9 +4,13 @@ import java.util.Scanner;
 
 public class Runner {
 
-    public void run(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите кол-во элементов ряда");
-        System.out.println("Pi = " + MyCalculate.calcPi(scanner.nextInt()));
+    public void run() {
+
+        Employee employee = new Employee();
+        Employee employee1 = new Employee("Parail","Andriy");
+        Employee employee2 = new Employee("Pozenko","Sasha");
+
+        System.out.println(Employee.getNumberOfEmployees());
+
     }
 }
