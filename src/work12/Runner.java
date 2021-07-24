@@ -6,11 +6,10 @@ public class Runner {
 
     public void run() {
 
-        Employee employee = new Employee();
-        Employee employee1 = new Employee("Parail","Andriy");
-        Employee employee2 = new Employee("Pozenko","Sasha");
-
-        System.out.println(Employee.getNumberOfEmployees());
+        ID id = new ID();
+        System.out.println(id.getId());
+        ID id1 = new ID();
+        System.out.println(id1.getId());
 
     }
 }
