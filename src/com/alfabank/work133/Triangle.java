@@ -1,6 +1,8 @@
 package com.alfabank.work133;
 
-public class Triangle extends Shape{
+import java.util.Arrays;
+
+public class Triangle extends Shape implements Cloneable{
     private double a;
     private double b;
     private double c;
@@ -35,6 +37,11 @@ public class Triangle extends Shape{
         this.a = a;
         this.b = b;
         this.c = c;
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 
     @Override

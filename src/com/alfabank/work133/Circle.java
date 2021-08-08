@@ -1,6 +1,6 @@
 package com.alfabank.work133;
 
-public class Circle extends Shape{
+public class Circle extends Shape implements Cloneable{
 
     private int radius;
 
@@ -24,6 +24,11 @@ public class Circle extends Shape{
     @Override
     public String toString() {
         return super.toString() + ", radius=" + radius;
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 
     @Override

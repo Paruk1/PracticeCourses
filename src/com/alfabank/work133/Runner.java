@@ -1,27 +1,25 @@
 package com.alfabank.work133;
 
-import java.util.Scanner;
+import java.util.Arrays;
 
 public class Runner {
-    public void run(){
-        double res;
-        Scanner scanner = new Scanner(System.in);
-
+    public void run()  {
         Shape[] shapes = createMassive();
+        outInfo(shapes);
 
-        outArea(shapes);
+        System.out.println("===================================");
+        Arrays.sort(shapes);
+        outInfo(shapes);
+        System.out.println("===================================");
 
-        System.out.println("Введите желаемое название класса");
-        res = sumArea(shapes,scanner.nextLine());
-        System.out.println("Общая сумма площадей класса = " + res);
-
-        System.out.println("Общая сумма площадей каждого типа класса");
-        sumAreaClasses(shapes);
-
+        Arrays.sort(shapes,new MyComparatorColor());
+        outInfo(shapes);
+        
     }
-    public void outArea(Shape[] shapes){
-        for (Shape element: shapes) {
-            System.out.println(element + "\nПлощадь фигуры = " + element.calcArea());
+
+    public void outInfo(Shape[] shapes) {
+        for (Shape element : shapes) {
+            element.draw();
         }
     }
 

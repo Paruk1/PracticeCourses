@@ -1,6 +1,6 @@
 package com.alfabank.work133;
 
-public class Rectangle extends Shape{
+public class Rectangle extends Shape implements Cloneable{
     private int height;
     private int width;
 
@@ -32,6 +32,11 @@ public class Rectangle extends Shape{
     @Override
     public String toString() {
         return super.toString() + ", height=" + height + ", width=" + width;
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 
     @Override

@@ -1,6 +1,6 @@
 package com.alfabank.work133;
 
-public class Shape {
+abstract class Shape implements Drawable,Comparable,Cloneable {
     private String color;
 
     public String getColor() {
@@ -20,11 +20,31 @@ public class Shape {
     }
 
     @Override
+    public void draw() {
+        //System.out.println("class=" + getClass().getSimpleName() + ", color=" + color + ", area=" + calcArea());
+        System.out.println(this + ", area=" + calcArea());
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        if(this.calcArea() > ((Shape)o).calcArea()) return 1;
+        if(this.calcArea() < ((Shape)o).calcArea()) return -1;
+        return 0;
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        Shape shape = (Shape)super.clone();
+        //shape.color = new String(color);
+        shape.color = color;
+        return shape;
+    }
+
+    @Override
     public String toString() {
         return "class=" + getClass().getSimpleName() + ", color=" + color;
     }
 
-    public double calcArea() {
-        return 0.0;
-    }
+    abstract double calcArea();
+
 }
