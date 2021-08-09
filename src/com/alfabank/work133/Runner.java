@@ -7,14 +7,27 @@ public class Runner {
         Shape[] shapes = createMassive();
         outInfo(shapes);
 
-        System.out.println("===================================");
+        System.out.println("==============comparable=====================");
         Arrays.sort(shapes);
         outInfo(shapes);
-        System.out.println("===================================");
 
+        System.out.println("==============comparator=====================");
         Arrays.sort(shapes,new MyComparatorColor());
         outInfo(shapes);
-        
+
+        System.out.println("==============clone==================");
+
+        Circle circle = new Circle("Red", 4);
+        Circle circle1 = null;
+        try {
+            circle1 = (Circle) circle.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        circle.draw();
+        circle.setColor("bug");
+        circle.draw();
+        circle1.draw();
     }
 
     public void outInfo(Shape[] shapes) {

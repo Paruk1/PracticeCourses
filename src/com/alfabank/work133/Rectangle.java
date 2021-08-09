@@ -1,5 +1,7 @@
 package com.alfabank.work133;
 
+import org.w3c.dom.css.Rect;
+
 public class Rectangle extends Shape implements Cloneable{
     private int height;
     private int width;

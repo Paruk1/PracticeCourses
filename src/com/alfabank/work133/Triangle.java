@@ -40,8 +40,8 @@ public class Triangle extends Shape implements Cloneable{
     }
 
     @Override
-    public Object clone() throws CloneNotSupportedException {
-        return super.clone();
+    public Circle clone() throws CloneNotSupportedException {
+        return (Circle)super.clone();
     }
 
     @Override

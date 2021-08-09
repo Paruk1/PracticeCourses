@@ -33,11 +33,8 @@ abstract class Shape implements Drawable,Comparable,Cloneable {
     }
 
     @Override
-    public Object clone() throws CloneNotSupportedException {
-        Shape shape = (Shape)super.clone();
-        //shape.color = new String(color);
-        shape.color = color;
-        return shape;
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 
     @Override
