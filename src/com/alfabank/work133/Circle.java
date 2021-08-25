@@ -1,5 +1,8 @@
 package com.alfabank.work133;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class Circle extends Shape implements Cloneable{
 
     private int radius;
@@ -35,4 +38,18 @@ public class Circle extends Shape implements Cloneable{
     public double calcArea() {
         return Math.PI * (radius * radius);
     }
+
+    // "Rectangle:RED:10,20", "Circle:BLACK:10", "Triangle:GREEN:9,7,12".
+
+    public static Circle parseRectangle (String figure){
+        if(figure == null) throw new InvalidShapeStringException("Input something");
+        String[] tokens = figure.split(":");
+
+        if (tokens.length != 3) throw new InvalidShapeStringException("Incorrect length!");
+        if (!tokens[2].matches("[0-9]")) throw new InvalidShapeStringException("Input numbers!!");
+
+        return new Circle(tokens[1],Integer.parseInt(tokens[2]));
+    }
+
+
 }

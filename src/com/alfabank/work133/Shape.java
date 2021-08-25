@@ -1,12 +1,11 @@
 package com.alfabank.work133;
 
-abstract class Shape implements Drawable,Comparable,Cloneable {
+public abstract class Shape implements Drawable,Comparable,Cloneable {
     private String color;
 
     public String getColor() {
         return color;
     }
-
     public void setColor(String color) {
         this.color = color;
     }
@@ -14,7 +13,6 @@ abstract class Shape implements Drawable,Comparable,Cloneable {
     public Shape() {
         color = "unknown";
     }
-
     public Shape(String color) {
         this.color = color;
     }
@@ -44,4 +42,19 @@ abstract class Shape implements Drawable,Comparable,Cloneable {
 
     abstract double calcArea();
 
+    // "Rectangle:RED:10,20", "Circle:BLACK:10", "Triangle:GREEN:9,7,12".
+    public static Shape parseRectangle (String figure){
+        if(figure == null) throw new InvalidShapeStringException("Input something!!");
+        String token = figure.split(":")[0];
+        switch (token){
+            case "Circle":
+                return Circle.parseRectangle(figure);
+            case "Triangle":
+                return Triangle.parseRectangle(figure);
+            case "Rectangle":
+                return Rectangle.parseRectangle(figure);
+            default:
+                throw new InvalidShapeStringException("You input unknown figure.");
+        }
+    }
 }
