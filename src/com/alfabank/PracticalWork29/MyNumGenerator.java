@@ -11,8 +11,8 @@ public class MyNumGenerator {
         this.numOfElm = numOfElm;
     }
 
-    public List generateList(){
-        List list = new ArrayList<>(numOfElm);
+    public List<Integer> generateList(){
+        List<Integer> list = new ArrayList<>(numOfElm);
         Random random = new Random();
         for (int i = 0; i < numOfElm; i++){
             list.add(random.nextInt(maxNumb));
@@ -20,8 +20,8 @@ public class MyNumGenerator {
         return list;
     }
 
-    public Set generateSet(){
-        Set set = new HashSet();
+    public Set<Integer> generateSet(){
+        Set<Integer> set = new HashSet<>();
         Random random = new Random();
         for (int i = 0; i < numOfElm; i++){
             boolean isAdded = set.add(random.nextInt(maxNumb));

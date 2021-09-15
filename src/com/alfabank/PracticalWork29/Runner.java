@@ -4,13 +4,13 @@ import java.util.*;
 
 public class Runner {
     public void run(){
-        ArrayList<String> arrayList = new ArrayList<>();
+        List<String> arrayList = new ArrayList<>();
         for (int i = 0; i < 10; i++){
             arrayList.add("number_" + i);
         }
         System.out.println(arrayList);
 
-        LinkedList<String> linkedList = new LinkedList<>();
+        List<String> linkedList = new LinkedList<>();
         Random random = new Random();
         int index;
         for(int i = 0; i < 10; i++){
@@ -33,8 +33,8 @@ public class Runner {
     }
     public void run2(){
         MyNumGenerator myNumGenerator = new MyNumGenerator(10,10);
-        List list = myNumGenerator.generateList();
-        Set set = myNumGenerator.generateSet();
+        List<Integer> list = myNumGenerator.generateList();
+        Set<Integer> set = myNumGenerator.generateSet();
         System.out.println(list);
         System.out.println(set);
 
