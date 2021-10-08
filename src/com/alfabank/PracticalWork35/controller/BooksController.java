@@ -53,14 +53,15 @@ public class BooksController {
     private void controllerAddBook(){
         String book = booksView.addBook();
         String[] bookSplit = book.split(";");
-
+        System.out.println(bookSplit.length);
         try{
-            int year = Integer.parseInt(bookSplit[3]);
-            int pages = Integer.parseInt(bookSplit[4]);
-            double price = Double.parseDouble(bookSplit[5]);
+            Validation.checkAddBookFormat(bookSplit);
+            int year = Validation.checkYear(bookSplit[3]);
+            int pages = Validation.checkYear(bookSplit[4]);
+            double price = Validation.checkPrice(bookSplit[5]);
             serviceBooks.addBook(bookSplit[0],bookSplit[1],bookSplit[2],year,pages,price);
-        }catch (IllegalArgumentException ex){
-            ex.getCause();
+        }catch (IllegalArgumentException | NullPointerException ex){
+            booksView.printMessage(ViewConstants.VALIDATION_ERROR);
         }
     }
     private void editBooks(){
@@ -69,15 +70,15 @@ public class BooksController {
     }
     private void findAuthor(){
         String authorName = booksView.findAuthor();
-        booksView.printBooksByText(serviceBooks.findAuthor(authorName));
+        booksView.printSearchList(serviceBooks.findAuthor(authorName));
     }
     private void findPublisher(){
         String publish = booksView.findPublisher();
-        booksView.printBooksByText(serviceBooks.findPublisher(publish));
+        booksView.printSearchList(serviceBooks.findPublisher(publish));
     }
     private void findYear(){
         int year = booksView.findYear();
-        booksView.printBooksByText(serviceBooks.findYear(year));
+        booksView.printSearchList(serviceBooks.findYear(year));
     }
 
 

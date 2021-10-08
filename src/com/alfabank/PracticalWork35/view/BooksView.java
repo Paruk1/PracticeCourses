@@ -53,4 +53,9 @@ public class BooksView {
         return inputViewBooks.inputProcents();
     }
 
+    public void printSearchList(List<Book> bookList){
+        if(bookList.size() == 0) System.out.println(ViewConstants.NOT_FOUND);
+        else printBooksByText(bookList);
+    }
+
 }
